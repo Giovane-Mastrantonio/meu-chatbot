@@ -8,17 +8,14 @@
     body { font-family: Arial, sans-serif; margin:0; padding:0; }
     header { padding: 15px; background:#1C64F2; color:white; }
     main { padding:20px; }
+    
+    /* 🔒 Ocultar citações no widget do Dify */
+    #dify-chatbot-bubble-window .dify-citations,
+    #dify-chatbot-bubble-window .citations,
+    #dify-chatbot-bubble-window [data-testid="citations"] {
+      display: none !important;
+    }
   </style>
-  <script src="https://udify.app/embed.min.js?v=2" defer></script>
-<style>
-  /* Oculta contêiner de citações no widget Dify */
-  #dify-chatbot-bubble-window .dify-citations,
-  #dify-chatbot-bubble-window .citations,
-  #dify-chatbot-bubble-window [data-testid="citations"] {
-    display: none !important;
-  }
-</style>
-
 </head>
 <body>
   <header>
@@ -28,10 +25,23 @@
     <p>Bem-vindo. Para interagir com o ChatBot, utilize o botão no canto inferior direito.</p>
   </main>
 
-  <!-- Snippet do Dify (Widget com citações desativadas) -->
+  <!-- Snippet do Dify (Widget) -->
   <script>
-    window.difyChatbotConfig = { token:"W81Pm7uY4pVWC1Z4" }
+    window.difyChatbotConfig = {
+      token:"W81Pm7uY4pVWC1Z4", // substitua pelo seu token real do Dify
+    }
   </script>
   <script src="https://udify.app/embed.min.js" defer></script>
+
+  <!-- Personalização opcional do botão/bolha -->
+  <style>
+    #dify-chatbot-bubble-button {
+      background-color: #1C64F2 !important; /* cor do botão */
+    }
+    #dify-chatbot-bubble-window {
+      width: 24rem !important;  /* largura da janela do chat */
+      height: 40rem !important; /* altura da janela do chat */
+    }
+  </style>
 </body>
 </html>
